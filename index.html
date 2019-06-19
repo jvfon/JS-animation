@@ -38,7 +38,40 @@
             <p id="displayColor"></p>
         </main>
 
-        <script>
+        <script type="text/javascript">
+
+            var notRunning = true; // prevents double-run bug
+
+            function getRandomColor () {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for ( var i = 0; i < 6; i++ ) {
+                    color += letters[math.floor(math.random() * 16)];
+                }
+                return color;
+            }
+
+            function discoSquare () {
+                var canvas = document.getDocumentById("whiteBoard");
+                var content = canvas.getContext("2d");
+
+                var verPos = masth.floor ((math.random() * 399) + 1);
+                var theColor = getRandomColor();
+
+                context.lineWidth = 10;
+                context.strokeStyle = theColor;
+                context.moveTo(10, verPos); // (horizontal / vertical)
+
+                context.lineTo(400,verPos);
+                context.lineCap = "butt";
+                context.stroke();
+
+                document.getElementById("displayColor").innerHTML = theColor;
+            }
+
+            var animation;
+
+            document.getElementById("discoStart").onclick = function()
             
         </script>
         
