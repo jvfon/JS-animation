@@ -71,7 +71,19 @@
 
             var animation;
 
-            document.getElementById("discoStart").onclick = function()
+            document.getElementById("discoStart").onclick = function() {
+                if(notRunning) {
+                    animation = setInterval(discoSquare, 100);
+                    notRuning = false;
+                } else {
+                    alert("Sorry, already running.");
+                }
+            }
+
+            document.getElementById("discoStop").onclick = function() {
+                clearInterval(animation);
+                notRunning = false;
+            }
             
         </script>
         
